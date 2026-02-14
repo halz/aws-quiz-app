@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": [
+    "TURSO_DATABASE_URL",
+    "TURSO_AUTH_TOKEN"
+  ]
+}
