@@ -107,6 +107,20 @@ export default function QuizApp() {
   const handleRedoQuiz = () => { if (!selectedChapter) return; handleChapterSelect(selectedChapter); };
   const handleShuffleAndReset = () => { setShuffle(!shuffle); setScreen('chapter-selection'); setSelectedChapter(null); setQuestions([]); setQuizState({ currentQuestion: 0, answers: {}, submitted: {}, startTime: 0 }); };
 
+  const getNextChapter = (): string | null => {
+    if (!selectedChapter || !selectedExam) return null;
+    const exam = EXAMS.find((e) => e.code === selectedExam);
+    if (!exam) return null;
+    const currentNum = parseInt(selectedChapter.replace(selectedExam, ''), 10);
+    if (currentNum >= exam.chapters) return null;
+    return selectedExam + String(currentNum + 1).padStart(2, '0');
+  };
+
+  const handleNextChapter = () => {
+    const nextChapter = getNextChapter();
+    if (nextChapter) handleChapterSelect(nextChapter);
+  };
+
   const isAnswerCorrect = (questionIndex: number): boolean => {
     const question = questions[questionIndex];
     const userAnswer = quizState.answers[questionIndex] || [];
@@ -305,9 +319,12 @@ export default function QuizApp() {
               </div>
             </div>
           )}
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-4 justify-center flex-wrap">
             <button onClick={handleRedoQuiz} className="px-8 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-colors">やり直す</button>
-            <button onClick={handleShuffleAndReset} className="px-8 py-3 rounded-lg gradient-button hover:opacity-90 text-white font-semibold transition-all">シャッフル＆リセット</button>
+            <button onClick={handleShuffleAndReset} className="px-8 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-colors">シャッフル＆リセット</button>
+            {getNextChapter() && (
+              <button onClick={handleNextChapter} className="px-8 py-3 rounded-lg gradient-button hover:opacity-90 text-white font-semibold transition-all">次のチャプターへ →</button>
+            )}
           </div>
         </div>
       </div>
