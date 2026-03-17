@@ -19,7 +19,7 @@ const EXAMS: ExamInfo[] = [
   { code: 'aif', name: 'AWS AI Practitioner (AIF-C01)', icon: '🤖', chapters: 45 },
   { code: 'saa', name: 'AWS Solutions Architect Associate (SAA-C03)', icon: '🏗️', chapters: 109 },
   { code: 'soa', name: 'AWS SysOps Administrator (SOA-C02)', icon: '⚙️', chapters: 107 },
-  { code: 'dva', name: 'AWS Developer Associate (DVA-C02)', icon: '💻', chapters: 12 },
+  { code: 'dva', name: 'AWS Developer Associate (DVA-C02)', icon: '💻', chapters: 70 },
 ];
 
 const CHOICE_COLORS: Record<string, { bg: string; text: string; border: string; bgHover: string }> = {
