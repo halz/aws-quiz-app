@@ -15,12 +15,25 @@ interface QuizState {
 }
 
 const EXAMS: ExamInfo[] = [
+  // Foundational
   { code: 'clf', name: 'AWS Cloud Practitioner (CLF-C02)', icon: '☁️', chapters: 35 },
   { code: 'aif', name: 'AWS AI Practitioner (AIF-C01)', icon: '🤖', chapters: 45 },
+  // Associate
   { code: 'saa', name: 'AWS Solutions Architect Associate (SAA-C03)', icon: '🏗️', chapters: 109 },
-  { code: 'soa', name: 'AWS SysOps Administrator (SOA-C02)', icon: '⚙️', chapters: 107 },
+  { code: 'soa', name: 'AWS SysOps Administrator (SOA-C02)', icon: '⚙️', chapters: 66 },
   { code: 'dva', name: 'AWS Developer Associate (DVA-C02)', icon: '💻', chapters: 70 },
-  { code: 'mls', name: 'AWS Machine Learning Specialty (MLS-C01)', icon: '🧠', chapters: 26 },
+  { code: 'dea', name: 'AWS Data Engineer Associate (DEA-C01)', icon: '📊', chapters: 39 },
+  { code: 'mla', name: 'AWS Machine Learning Engineer (MLA-C01)', icon: '🧠', chapters: 30 },
+  // Professional
+  { code: 'sap', name: 'AWS Solutions Architect Professional (SAP-C02)', icon: '🏛️', chapters: 61 },
+  { code: 'dop', name: 'AWS DevOps Engineer Professional (DOP-C02)', icon: '🔧', chapters: 49 },
+  { code: 'mls', name: 'AWS Machine Learning Specialty (MLS-C01)', icon: '🔬', chapters: 25 },
+  // Specialty
+  { code: 'ans', name: 'AWS Advanced Networking Specialty (ANS-C01)', icon: '🌐', chapters: 23 },
+  { code: 'scs', name: 'AWS Security Specialty (SCS-C02)', icon: '🔒', chapters: 56 },
+  { code: 'cdl', name: 'AWS Cloud Digital Leader (CDL-C01)', icon: '📋', chapters: 30 },
+  { code: 'ace', name: 'AWS Certified Engineer (ACE)', icon: '🛠️', chapters: 37 },
+  { code: 'pca', name: 'AWS Certified Analytics (PCA)', icon: '📈', chapters: 23 },
 ];
 
 const CHOICE_COLORS: Record<string, { bg: string; text: string; border: string; bgHover: string }> = {
