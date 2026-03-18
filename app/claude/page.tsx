@@ -36,6 +36,13 @@ interface Question {
   type?: string;
 }
 
+interface GradeResult {
+  grade: 'correct' | 'partial' | 'incorrect' | 'unknown';
+  score: number;
+  feedback: string;
+  modelAnswer: string;
+}
+
 type Screen = 'home' | 'course-list' | 'lesson' | 'quiz-select' | 'quiz' | 'completion';
 
 const CHOICE_COLORS: Record<string, { bg: string; text: string; border: string }> = {
@@ -68,6 +75,9 @@ export default function ClaudePage() {
   const [loading, setLoading] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [arcLessons, setArcLessons] = useState<Lesson[]>([]);
+  const [freeTextAnswers, setFreeTextAnswers] = useState<Record<number, string>>({});
+  const [gradeResults, setGradeResults] = useState<Record<number, GradeResult>>({});
+  const [grading, setGrading] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     if (screen !== 'quiz' || quizState.startTime === 0) return;
@@ -110,10 +120,46 @@ export default function ClaudePage() {
         setQuestions(data.data);
         setQuizState({ currentQuestion: 0, answers: {}, submitted: {}, startTime: Date.now() });
         setElapsedTime(0);
+        setFreeTextAnswers({});
+        setGradeResults({});
+        setGrading({});
         setScreen('quiz');
       }
     } catch (e) { console.error(e); }
     finally { setLoading(false); }
+  };
+
+  const handleGradeAnswer = async (questionIndex: number) => {
+    const q = questions[questionIndex];
+    const userAnswer = freeTextAnswers[questionIndex];
+    if (!userAnswer?.trim()) return;
+
+    setGrading(prev => ({ ...prev, [questionIndex]: true }));
+    try {
+      const res = await fetch('/api/claude/grade', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          question: q.question,
+          correctAnswer: q.explanation,
+          userAnswer: userAnswer.trim(),
+        }),
+      });
+      const data = await res.json();
+      if (data.success && data.result) {
+        setGradeResults(prev => ({ ...prev, [questionIndex]: data.result }));
+        // Mark as submitted
+        setQuizState(prev => ({
+          ...prev,
+          answers: { ...prev.answers, [questionIndex]: ['A'] },
+          submitted: { ...prev.submitted, [questionIndex]: true },
+        }));
+      }
+    } catch (e) {
+      console.error('Grade error:', e);
+    } finally {
+      setGrading(prev => ({ ...prev, [questionIndex]: false }));
+    }
   };
 
   const handleAnswerSelect = (label: string) => {
@@ -409,23 +455,77 @@ export default function ClaudePage() {
                 })}
               </div>
             ) : (
-              <button
-                onClick={() => {
-                  setQuizState(prev => ({
-                    ...prev,
-                    answers: { ...prev.answers, [prev.currentQuestion]: ['A'] },
-                    submitted: { ...prev.submitted, [prev.currentQuestion]: true }
-                  }));
-                }}
-                disabled={isSubmitted}
-                className="px-8 py-4 rounded-lg bg-orange-600 hover:bg-orange-500 disabled:bg-slate-600 text-white font-semibold transition-all"
-              >
-                {isSubmitted ? '👇 解説を確認' : '答えを見る 👀'}
-              </button>
+              <div className="space-y-4">
+                <textarea
+                  value={freeTextAnswers[quizState.currentQuestion] || ''}
+                  onChange={(e) => setFreeTextAnswers(prev => ({ ...prev, [quizState.currentQuestion]: e.target.value }))}
+                  disabled={isSubmitted}
+                  placeholder="ここに回答を入力してください..."
+                  className="w-full h-40 p-4 rounded-lg bg-slate-900 border-2 border-slate-600 text-white placeholder-gray-500 focus:border-orange-400 focus:outline-none resize-y disabled:opacity-60 disabled:cursor-not-allowed"
+                />
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => handleGradeAnswer(quizState.currentQuestion)}
+                    disabled={isSubmitted || grading[quizState.currentQuestion] || !(freeTextAnswers[quizState.currentQuestion]?.trim())}
+                    className="px-8 py-3 rounded-lg bg-orange-600 hover:bg-orange-500 disabled:bg-slate-600 disabled:opacity-50 text-white font-semibold transition-all flex items-center gap-2"
+                  >
+                    {grading[quizState.currentQuestion] ? (
+                      <><span className="animate-spin">⏳</span> AI採点中...</>
+                    ) : (
+                      <>🤖 AI採点</>
+                    )}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setQuizState(prev => ({
+                        ...prev,
+                        answers: { ...prev.answers, [prev.currentQuestion]: ['A'] },
+                        submitted: { ...prev.submitted, [prev.currentQuestion]: true }
+                      }));
+                    }}
+                    disabled={isSubmitted}
+                    className="px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 disabled:opacity-50 text-white font-semibold transition-colors"
+                  >
+                    模範解答を見る 👀
+                  </button>
+                </div>
+              </div>
             )}
 
+            {/* AI Grade Result */}
+            {gradeResults[quizState.currentQuestion] && (
+              <div className={`mt-6 p-6 rounded-lg border-l-4 ${
+                gradeResults[quizState.currentQuestion].grade === 'correct' ? 'bg-green-900/30 border-green-500' :
+                gradeResults[quizState.currentQuestion].grade === 'partial' ? 'bg-yellow-900/30 border-yellow-500' :
+                gradeResults[quizState.currentQuestion].grade === 'incorrect' ? 'bg-red-900/30 border-red-500' :
+                'bg-slate-700 border-orange-500'
+              }`}>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">
+                    {gradeResults[quizState.currentQuestion].grade === 'correct' ? '🎉' :
+                     gradeResults[quizState.currentQuestion].grade === 'partial' ? '🔶' :
+                     gradeResults[quizState.currentQuestion].grade === 'incorrect' ? '❌' : '🤔'}
+                  </span>
+                  <span className={`text-lg font-bold ${
+                    gradeResults[quizState.currentQuestion].grade === 'correct' ? 'text-green-400' :
+                    gradeResults[quizState.currentQuestion].grade === 'partial' ? 'text-yellow-400' :
+                    gradeResults[quizState.currentQuestion].grade === 'incorrect' ? 'text-red-400' : 'text-orange-400'
+                  }`}>
+                    {gradeResults[quizState.currentQuestion].grade === 'correct' ? '正解！' :
+                     gradeResults[quizState.currentQuestion].grade === 'partial' ? '部分的に正解' :
+                     gradeResults[quizState.currentQuestion].grade === 'incorrect' ? '不正解' : '採点結果'}
+                    {gradeResults[quizState.currentQuestion].score > 0 && (
+                      <span className="ml-2 text-sm opacity-80">({gradeResults[quizState.currentQuestion].score}点)</span>
+                    )}
+                  </span>
+                </div>
+                <p className="text-gray-200 whitespace-pre-wrap">{gradeResults[quizState.currentQuestion].feedback}</p>
+              </div>
+            )}
+
+            {/* Model answer / explanation */}
             {isSubmitted && current.explanation && (
-              <div className={`mt-8 p-6 rounded-lg border-l-4 ${
+              <div className={`mt-6 p-6 rounded-lg border-l-4 ${
                 current.type === 'knowledge-check' ? 'bg-slate-700 border-orange-500' :
                 correct ? 'bg-slate-700 border-green-500' : 'bg-slate-700 border-red-500'
               }`}>
@@ -433,7 +533,7 @@ export default function ClaudePage() {
                   current.type === 'knowledge-check' ? 'text-orange-400' :
                   correct ? 'text-green-400' : 'text-red-400'
                 }`}>
-                  {current.type === 'knowledge-check' ? '📖 解説' : correct ? '🎉 正解です！' : '💡 解説'}
+                  {current.type === 'knowledge-check' ? '📖 模範解答' : correct ? '🎉 正解です！' : '💡 解説'}
                 </div>
                 <div className="text-gray-200 whitespace-pre-wrap">{current.explanation}</div>
               </div>
