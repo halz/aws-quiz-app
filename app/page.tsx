@@ -166,7 +166,12 @@ export default function QuizApp() {
       <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-950 p-8">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold text-center gradient-text mb-4">AWS 認定試験対策</h1>
-          <p className="text-center text-gray-400 mb-12 text-lg">あなたの認定資格取得をサポートします</p>
+          <p className="text-center text-gray-400 mb-8 text-lg">あなたの認定資格取得をサポートします</p>
+          <div className="flex justify-center mb-12">
+            <a href="/claude" className="px-6 py-3 rounded-lg bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-semibold transition-all transform hover:scale-105 flex items-center gap-2">
+              🤖 Claude 学習センター →
+            </a>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {EXAMS.map((exam) => (
               <button key={exam.code} onClick={() => handleExamSelect(exam.code)} className="group relative p-6 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 transition-all duration-300 transform hover:scale-105">

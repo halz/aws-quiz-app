@@ -1,0 +1,114 @@
+[
+  {
+    "id": "claude-c01",
+    "slug": "claude-101",
+    "title": "Claude 101",
+    "titleJa": "Claude 101",
+    "description": "毎日の業務でClaudeを使う方法を学ぶ入門コース。主要機能を理解し、さらに高度な学習へのリソースも探索する。",
+    "order": 1
+  },
+  {
+    "id": "claude-c02",
+    "slug": "ai-fluency-framework-foundations",
+    "title": "AI Fluency: Framework & Foundations",
+    "titleJa": "AIリテラシー：フレームワークと基礎",
+    "description": "AIシステムと効果的・効率的・倫理的・安全に協働するスキルを習得。4DフレームワークのDelegation（委任）・Description（指示）・Discernment（判断）・Diligence（勤勉）を学ぶ。2023-2024年に研究をベースに開発されたフレームワーク。",
+    "order": 2
+  },
+  {
+    "id": "claude-c03",
+    "slug": "claude-with-the-anthropic-api",
+    "title": "Building with the Claude API",
+    "titleJa": "Claude APIで開発する",
+    "description": "Anthropic APIを使ってClaude AIをアプリケーションに組み込む総合コース。APIの基本からRAG・エージェント・MCPまで網羅。",
+    "order": 3
+  },
+  {
+    "id": "claude-c04",
+    "slug": "introduction-to-model-context-protocol",
+    "title": "Introduction to Model Context Protocol",
+    "titleJa": "Model Context Protocol入門",
+    "description": "PythonでMCPサーバー/クライアントをゼロから構築。Tools・Resources・Promptsの3つのコアプリミティブを習得し、Claudeと外部サービスを接続する。ハンズオンプロジェクトとしてドキュメント管理システムを実装する。",
+    "order": 4
+  },
+  {
+    "id": "claude-c05",
+    "slug": "model-context-protocol-advanced-topics",
+    "title": "Model Context Protocol: Advanced Topics",
+    "titleJa": "Model Context Protocol：上級トピック",
+    "description": "MCPサーバーとクライアントの技術的実装を、基本的なメッセージパッシングから本番デプロイメント戦略まで深掘りするコース。",
+    "order": 5
+  },
+  {
+    "id": "claude-c06",
+    "slug": "claude-code-in-action",
+    "title": "Claude Code in Action",
+    "titleJa": "Claude Code 実践",
+    "description": "ソフトウェア開発タスクにClaude Codeを活用する総合コース。",
+    "order": 6
+  },
+  {
+    "id": "claude-c07",
+    "slug": "introduction-to-agent-skills",
+    "title": "Introduction to Agent Skills",
+    "titleJa": "エージェントスキル入門",
+    "description": "Claude CodeのSKILL.mdを使ったスキル（再利用可能なマークダウン指示）を作成・設定・共有・チームデプロイする方法を習得。一度教えれば繰り返さなくてよい仕組みを作る。",
+    "order": 7
+  },
+  {
+    "id": "claude-c08",
+    "slug": "ai-fluency-for-educators",
+    "title": "AI Fluency for Educators",
+    "titleJa": "教育者のためのAIリテラシー",
+    "description": "教員・教育設計者・教育リーダーが、4DフレームワークをAIツールとしての思考パートナー、コラボレーション促進、批判的評価強化など教育実践と機関戦略に応用できるよう支援するコース。",
+    "order": 8
+  },
+  {
+    "id": "claude-c09",
+    "slug": "ai-fluency-for-students",
+    "title": "AI Fluency for Students",
+    "titleJa": "学生のためのAIリテラシー",
+    "description": "責任あるAI協働を通じて、学習・キャリア計画・学業成功を高めるAIリテラシースキルを学生が身につけるコース。「AIリテラシー」とは、単にAIを使うことではなく、AIと流暢に協働できることを意味する。",
+    "order": 9
+  },
+  {
+    "id": "claude-c10",
+    "slug": "ai-fluency-for-nonprofits",
+    "title": "AI Fluency for Nonprofits",
+    "titleJa": "非営利団体のためのAIリテラシー",
+    "description": "非営利専門職（ファンドレイジング・広報・プログラム運営・運営・リーダーシップ）が組織のインパクトと効率を高めながらミッションに忠実でいられるよう、4Dフレームワークを活用したAIリテラシーを習得するコース。",
+    "order": 10
+  },
+  {
+    "id": "claude-c11",
+    "slug": "claude-in-amazon-bedrock",
+    "title": "Claude with Amazon Bedrock",
+    "titleJa": "Amazon BedrockでClaudeを使う",
+    "description": "Amazon Bedrock経由のClaude AI統合・デプロイ総合コース。boto3でのAPI呼び出しからツール使用・RAG・MCP・Claude Codeまで網羅。",
+    "order": 11
+  },
+  {
+    "id": "claude-c12",
+    "slug": "claude-with-google-vertex",
+    "title": "Claude with Google Cloud's Vertex AI",
+    "titleJa": "Google Cloud Vertex AIでClaudeを使う",
+    "description": "Google Cloud Vertex AI経由のClaude AI統合・デプロイ総合コース。BedrockコースとほぼClaude APIコースと同内容だが、Vertex AI固有のセットアップとParallel Claude Code・Computer Useが追加。",
+    "order": 12
+  },
+  {
+    "id": "claude-c13",
+    "slug": "teaching-ai-fluency",
+    "title": "Teaching AI Fluency",
+    "titleJa": "AIリテラシーを教える",
+    "description": "教員・教育設計者・インストラクターが、講師主導の環境でAIリテラシーを教え・評価できるよう支援するコース。",
+    "order": 13
+  },
+  {
+    "id": "claude-arc",
+    "slug": "claude-certified-architect",
+    "title": "Claude Certified Architect",
+    "titleJa": "Claude Certified Architect 試験対策",
+    "description": "5ドメインの知識を網羅したClaude認定アーキテクト試験対策ガイド",
+    "order": 14
+  }
+]

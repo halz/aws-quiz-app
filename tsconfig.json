@@ -28,7 +28,9 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "allowJs": true,
+    "moduleResolution": "node"
   },
   "include": [
     "next-env.d.ts",

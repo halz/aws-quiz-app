@@ -1,0 +1,828 @@
+[
+  {
+    "id": "claude-c01-1-1",
+    "question": "Claudeのデスクトップアプリが対応している主な3つの機能領域は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "Chat（チャット）・Cowork（共同作業）・Code（コーディング）  \n日常会話から、ドキュメント共同作業、コード生成・レビューまでカバーしている。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c01-1-2",
+    "question": "Claudeの「アーティファクト（Artifacts）」とは何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "会話の中でClaudeが生成した独立したコンテンツ（ドキュメント、コード、表、図など）を指す。アーティファクトは会話とは別に保存・編集・再利用できる。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c01-1-3",
+    "question": "Claudeの「プロジェクト」機能を使う主なメリットを2つ挙げよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "1. コンテキストの保持 — プロジェクト内の会話にまたがってClaudeが文脈を維持できる  \n2. 知識の整理 — 関連するドキュメント・指示・会話をまとめて管理できる",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c01-1-4",
+    "question": "「リサーチモード」はどんな場面で特に有効か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "深掘り調査（Deep dives） が必要な場面。通常の会話よりも広範な情報収集と分析が求められるとき。例：市場調査、文献レビュー、複雑なトピックの理解など。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c02-2-1",
+    "question": "4DフレームワークのDを4つ全て日本語で説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "1. Delegation（委任） — AIに任せるタスクと人間が担うタスクを判断する\n2. Description（指示） — AIへの指示を明確・具体的に伝える\n3. Discernment（判断） — AIの出力を批判的に評価し、正確さを確認する\n4. Diligence（勤勉） — AIの限界や偏りを認識しつつ責任を持って使い続ける",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c02-2-2",
+    "question": "AIリテラシー（AI Fluency）と「AIを使うこと」の違いは何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "単にAIを使うことは道具として操作するレベル。AIリテラシーとは、AIと効果的・効率的・倫理的・安全に協働できるスキルを持つこと。批判的思考を維持しながらAIを創造性や生産性を高めるパートナーとして活用できる状態を指す。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c02-2-3",
+    "question": "Discernment（判断）が重要な理由を具体例を挙げて説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "AIは自信を持って誤った情報を生成することがある（ハルシネーション）。例えば、事実確認が必要な記事をClaudeに書かせた場合、日付・数字・引用などが不正確でも流暢な文章で出てくることがある。Discernmentがなければそのまま公開してしまうリスクがある。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-1",
+    "question": "Claude APIでマルチターン会話を実装するために必要な基本的な概念は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "メッセージ履歴（message history）の管理。各リクエストに過去の会話（user/assistantのペア）を含めることでClaudeは文脈を保持する。APIはステートレスなので、クライアント側で履歴を保持して毎回送る必要がある。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-2",
+    "question": "システムプロンプト（System Prompt）の役割を説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "会話全体を通してClaudeの振る舞い・役割・制約を定義する特別なプロンプト。「あなたはカスタマーサポート担当です」「日本語のみで返答してください」など、ユーザーの入力とは別に常に適用されるコンテキストを提供する。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-3",
+    "question": "TemperatureパラメータをデフォルトのValues（1.0）から0.2に下げるとClaudeの出力はどう変わるか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "出力がより決定論的・一貫性が高くなる。同じ入力に対して毎回ほぼ同じ答えを返すようになる。コード生成・事実確認・分類タスクなど、正確性が重要な場面に適している。反対に高い値（1.0以上）は創造的・多様な出力を促す。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-4",
+    "question": "プロンプト評価（Prompt Evaluation）の典型的なワークフローの手順を順番に説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "1. テストデータセットを生成する — 想定される入力のサンプルを用意\n2. 評価基準を定義する — 何をもって「良い出力」とするかを決める\n3. 評価を実行する — プロンプトをテストデータで試す\n4. 採点する — モデルベース採点またはコードベース採点で点数化\n5. プロンプトを改善する — 結果を見て修正・再テスト",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-5",
+    "question": "XMLタグを使ったプロンプト構造化の利点は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- AIが入力の各部分を明確に区別できる（指示、文脈、データ、例など）\n- 長い複雑なプロンプトの可読性と保守性が向上する\n- Claudeはトレーニングでマークアップに慣れているため解釈精度が上がる  \n例: `<context>...</context><task>...</task><format>...</format>`",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-6",
+    "question": "ツール使用（Tool Use）において「ツールスキーマ（Tool Schema）」が必要な理由は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "Claudeがツールを呼び出す際にどのパラメータを渡すべきかを理解するため。スキーマはツールの名前・説明・期待するパラメータの型・必須項目などをJSON Schema形式で定義する。これがないとClaudeは正しい形式でツールを呼び出せない。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-7",
+    "question": "RAG（Retrieval Augmented Generation）が必要な典型的な場面と、その仕組みの概要を説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "必要な場面: LLMのトレーニングデータに含まれていない情報（社内文書、最新ニュース、専門データベースなど）への質問に答えたいとき。\n\n仕組みの概要:\n1. ドキュメントをチャンクに分割し、ベクトル埋め込みを生成してDBに保存\n2. ユーザーの質問もベクトル化し、類似度検索で関連チャンクを取得\n3. 取得したチャンクをプロンプトのコンテキストとしてClaudeに渡す\n4. Claudeが取得情報を基に回答を生成",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-8",
+    "question": "プロンプトキャッシング（Prompt Caching）の主な効果は何か？また、どんな場面で有効か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "主な効果:\n- レイテンシの低減 — 同じコンテキストの再処理を省略\n- コスト削減 — キャッシュヒット時はトークン処理コストが大幅に安くなる\n\n有効な場面:\n- 長いシステムプロンプトを毎回使うアプリケーション\n- 大きなドキュメントや知識ベースを参照し続けるシステム\n- マルチターン会話で同じコンテキストを繰り返し使う場面",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c03-3-9",
+    "question": "エージェントワークフローの「並列化（Parallelization）」「チェーン（Chaining）」「ルーティング（Routing）」の違いを説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- 並列化: 複数のタスクを同時に実行する。互いに依存しないサブタスクを並列で処理して速度を上げる。例: 複数ドキュメントの同時要約\n- チェーン: 前のステップの出力を次のステップの入力にする直列パイプライン。例: 翻訳→要約→フォーマット変換\n- ルーティング: 入力内容に応じて適切なサブエージェントやワークフローに振り分ける。例: 質問の種類（技術/料金/サポート）によって担当を変える",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c04-4-1",
+    "question": "MCPの3つのコアプリミティブを日本語で説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "1. Tools（ツール） — モデルが制御する操作。Claudeが能動的に呼び出す関数。例: ウェブ検索、ファイル読み込み\n2. Resources（リソース） — アプリが制御する読み取り専用データ。コンテキストとして提供されるデータソース。例: ファイルの内容、データベースの一覧\n3. Prompts（プロンプト） — ユーザーが制御するプリセット指示。よく使うワークフロー用のプロンプトテンプレート。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c04-4-2",
+    "question": "MCPを使う主なメリットは何か？直接ツールを実装する場合と比べて。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- ツール定義をサーバー側に分離できる → JSONスキーマを毎回書く必要がない\n- 再利用性が高い → 一度作ったMCPサーバーを複数のアプリから使える\n- 標準プロトコル → どんなMCPクライアント（Claude Desktopなど）からも使える\n- 関心の分離 → AIのロジックと外部サービスの接続を切り離せる",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c04-4-3",
+    "question": "MCPのTools・Resources・Promptsは、誰が「制御」するプリミティブか？それぞれの違いは何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- Tools → モデル（Claude）が制御 — Claudeが必要と判断したときに自律的に呼び出す\n- Resources → アプリ（クライアントコード）が制御 — アプリ側がどのデータをコンテキストとして提供するか決める\n- Prompts → ユーザーが制御 — ユーザーが明示的に選んで使うプリセットのワークフロー",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c04-4-4",
+    "question": "MCPサーバーインスペクター（MCP Server Inspector）は何に使うツールか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "MCPサーバーをブラウザ上でテスト・デバッグするためのツール。サーバーを実際のクライアントに接続する前に、定義したツール・リソース・プロンプトが正しく動作するか確認できる。インタラクティブにツールを呼び出してレスポンスを確認できる。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c05-5-1",
+    "question": "MCPの「サンプリング（Sampling）」とは何か？通常のツール使用と何が違うか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "サンプリング: MCPサーバーが、接続されているクライアントを通じてLM（言語モデル）呼び出しをリクエストする機能。\n\n通常のツール使用との違い:\n- 通常: クライアント（アプリ）がClaudeを呼び出し、Claudeがツール（サーバー）を使う\n- サンプリング: サーバー側が逆にLM呼び出しを要求できる → AIコストと複雑さをサーバーからクライアントにシフトできる",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c05-5-2",
+    "question": "STDIOトランスポートとStreamableHTTPトランスポートの使い分けを説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- STDIO: 標準入出力を使った通信。ローカル環境（同一マシン上でクライアントとサーバーが動く）に最適。シンプルでオーバーヘッドが少ない。\n- StreamableHTTP: HTTP + SSE（Server-Sent Events）を使った通信。リモート環境・本番デプロイに使う。ロードバランサー経由のスケールアウトも可能だが、設定が複雑になる。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c05-5-3",
+    "question": "Roots（ルーツ）パーミッションモデルの目的を説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "MCPサーバーに特定のディレクトリへのアクセス権限を付与する仕組み。セキュリティ境界を設けることで、サーバーがアクセスできるファイルシステムの範囲を制限する。例えば `/home/user/projects/myapp` だけを許可し、システム全体へのアクセスは禁止する。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c06-6-1",
+    "question": "Claude Codeの「カスタムコマンド（Custom Commands）」とは何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "繰り返し使う定型作業をコマンドとして登録する機能。例えば「テストを書く」「コードレビューする」「ドキュメントを更新する」などのワークフローをコマンド化して、毎回同じ指示を打つ手間を省く。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c06-6-2",
+    "question": "Claude Codeの「フック（Hooks）」の役割を説明せよ。通常のコマンドとの違いは？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "フック: 特定のイベント（ファイル保存・コミット前・ビルド後など）に自動的にトリガーされる処理。コマンドが手動実行なのに対して、フックはイベント駆動で自動実行される。例えば「ファイルを保存するたびに自動でリント・フォーマット」や「コミット前に自動テスト」などが実現できる。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c06-6-3",
+    "question": "Claude Codeでコンテキストを「制御する」ことが重要な理由は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "AIに渡すコンテキスト（情報量）が多すぎると：\n- トークンコストが増大する\n- 応答品質が下がる（不要な情報でノイズが増える）\n- 速度が遅くなる\n\nコンテキストウィンドウの中にタスクに本当に必要な情報だけを入れることで、精度・速度・コストを最適化できる。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c07-7-1",
+    "question": "Claude CodeのSkillsとCLAUDE.mdの違いは何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- CLAUDE.md: プロジェクト全体に適用される常時有効な指示ファイル。毎回コンテキストに読み込まれる。\n- Skills（スキル）: 特定のタスクのときだけClaudeが自動的に読み込む再利用可能な指示。説明文のマッチングによって適切なタイミングでのみ適用される。コンテキストウィンドウを効率的に使える。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c07-7-2",
+    "question": "SKILL.mdのフロントマターで「description」が重要な理由は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "Claudeがスキルをいつ適用すべきか判断する基準になるから。Claudeはタスクの内容とdescriptionを照合し、マッチすれば自動でそのスキルを読み込む。description が曖昧・不正確だと、スキルがトリガーされなかったり、関係ないタスクで誤って使われたりする。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c07-7-3",
+    "question": "「プログレッシブ開示（Progressive Disclosure）」をスキルディレクトリで使う目的は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "コンテキストウィンドウの効率化が目的。スキルの詳細情報を階層的に整理し、必要になった時だけ追加情報を読み込む。例えば最初はSKILL.mdの概要だけ読み込み、特定の処理が必要なときだけ詳細なreferences/スクリプトを参照する。これにより毎回全情報を読み込むより無駄なトークン消費を防げる。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c08-8-1",
+    "question": "AI Fluency for Educatorsが「AI Fluency: Framework & Foundations」の受講を前提としている理由は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "教育者向けコースは4Dフレームワークを教育実践に応用する内容のため。コアコースでフレームワーク自体を理解していないと、教育文脈への応用を学んでも基礎が抜けることになる。先にDelegation・Description・Discernment・Diligenceを自分で体得してから、それを学生に教える方法を学ぶのが効果的な順序。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c08-9-1",
+    "question": "学生がAIを使う際に「ショートカット」として使うことの何が問題か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- 批判的思考力が育たない — 自分で考えるプロセスをスキップするため\n- 学習効果が下がる — 理解の代わりに出力だけ得る状態になる\n- AIへの過度な依存 — AIが間違えても気づけなくなる\n- 本来のスキルが身につかない — 将来AIなしでは機能できなくなるリスク\n\nコースはAIを「思考パートナー」として批判的思考と創造性を強化するツールとして使う方法を教える。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c08-10-1",
+    "question": "非営利団体でAIを導入する際に、一般の企業と異なる特有の課題を2つ挙げよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "1. 限られたリソース — 専門スタッフやAIツールへの予算が少ない\n2. 複数のステークホルダーへの説明責任 — 寄付者・受益者・地域社会・規制機関など多様な利害関係者に対してAI活用の透明性と説明が必要\n（他にも: ミッション整合性の確保、データプライバシーへの高い配慮など）",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c11-11-1",
+    "question": "boto3でClaude on Bedrockを呼び出す際、Anthropic直接APIとの主な違いは何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- 認証方法 — boto3はAWS IAMで認証（APIキーではなく）\n- モデルID形式 — Bedrockではモデルを`anthropic.claude-3-5-sonnet-20241022-v2:0`のようなAWS固有のIDで指定\n- クライアント初期化 — `anthropic.Anthropic()`ではなく`boto3.client('bedrock-runtime')`\n- リクエスト形式 — Bedrock独自のラッパーがある（ただし最新のAnthropicクライアントはBedrock対応している）",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c11-11-2",
+    "question": "Contextual Retrieval（コンテキスト検索）とは何か？通常のRAGとの違いは？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "通常のRAG: ドキュメントをチャンクに分割し、そのままベクトル化して検索する。チャンク単体では文脈が失われることがある。\n\nContextual Retrieval: チャンクをベクトル化する前に、そのチャンクが属する文脈（ドキュメント全体の中での位置づけ）をLLMで要約・付加してからベクトル化する。これにより検索精度が向上する。Anthropicが発表した手法で、特に長い文書の検索に効果的。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c12-12-1",
+    "question": "Vertex AIでClaudeを使う際、APIキーの代わりに何を使って認証するか？また、なぜその方法が推奨されるか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "Google Cloud IAM（Identity and Access Management）を使った認証。サービスアカウントや`gcloud auth`による認証。\n\n推奨理由:\n- APIキーはシークレット管理が必要だが、IAMはGCPのロールと権限モデルに統合されている\n- 最小権限の原則を適用しやすい\n- CloudトレイルやIAMポリシーで監査・アクセス制御がしやすい",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-c12-12-2",
+    "question": "Vertex AIコースで追加されている「Computer Use（コンピュータ使用）」とは何か？どんな用途に使えるか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "ClaudeがコンピュータのUIを視覚的に操作する機能。スクリーンショットを取得し、クリック・テキスト入力・スクロールなどの操作を自動実行できる。\n\n用途例:\n- APIがないレガシーシステムのオートメーション\n- Webブラウザ操作のRPA（ロボティックプロセスオートメーション）\n- UIテストの自動化\n- 手動でしか操作できないソフトウェアの自動化",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A1-1",
+    "question": "エージェントループでループの終了を判定する正しい方法はどれか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "`response.content[0].type == \"text\"` であれば終了"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "multiSelect": false,
+    "explanation": "D) stop_reason == \"end_turn\"\n\nA・B・Cは試験で「拒絶すべきアンチパターン」として明示されている。\n- A: テキストとtool_use blockが同時に返ることがある\n- B: 任意の上限は意味がない（モデルがstop_reasonで通知する）\n- C: 自然言語は曖昧で信頼できない"
+  },
+  {
+    "id": "claude-arc-A1-2",
+    "question": "マルチエージェントシステムで、サブエージェントが前のサブエージェントの結果を知らないのはなぜか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "サブエージェントはコーディネーターの会話履歴を自動継承しない。  \nサブエージェント間でメモリは共有されない。サブエージェントが必要とする情報はすべてプロンプトに明示的に含める必要がある。これが最も一般的な誤解。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A1-3",
+    "question": "金融取引を処理するエージェントで、口座確認なしに返金が処理されるケースが8%発生している。正しい修正方法は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "システムプロンプトに「必ず口座確認を行ってください」を追加"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "multiSelect": false,
+    "explanation": "B) プログラム的な前提条件ゲート\n\n財務上重要な場面ではプロンプト指示は不十分。100%の保証が必要な場合はフックと前提条件ゲートを使う。A・C・Dは確率論的なアプローチで8%のケースを0%にできない。"
+  },
+  {
+    "id": "claude-arc-A1-4",
+    "question": "コーディネーターが「AIの創造産業への影響」を分析するタスクを分解した結果、視覚芸術に関するレポートしか出なかった。根本原因はどこか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ウェブ検索サブエージェントの検索精度"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "multiSelect": false,
+    "explanation": "C) コーディネーターのタスク分解ロジック  \n根本原因は上流のコーディネーターにある。音楽・文章・映画を見逃したのは、コーディネーターが研究スコープを適切に分割しなかったから。試験は「根本原因を正確に追跡する」ことを求める。"
+  },
+  {
+    "id": "claude-arc-A2-1",
+    "question": "`get_customer`と`lookup_order`というツールが、どちらも「顧客/注文情報を取得する」という最小限の説明しか持っていない。エージェントが`check the status of order #12345`を`get_customer`にルーティングしている。最初に取るべき正しい修正は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Few-shotの例を追加する"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "multiSelect": false,
+    "explanation": "D) ツールの説明を拡張する  \nツール説明がLLMのツール選択の第一メカニズム。「低労力・高レバレッジ」の修正が優先。A（トークンコスト増・間違った根本原因）、B（過剰設計）、C（多大な労力）はいずれも不適切な最初のステップ。"
+  },
+  {
+    "id": "claude-arc-A2-2",
+    "question": "次のtool_choice設定の違いを説明せよ。`\"auto\"`、`\"any\"`、`{\"type\": \"tool\", \"name\": \"verify_account\"}`",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- `\"auto\"`: デフォルト。モデルがツールを呼び出すかテキストを返すかを決める\n- `\"any\"`: 必ずツールを呼び出す（どれかを選ぶ）。複数スキーマから構造化出力が必要な場合\n- `{\"type\": \"tool\", \"name\": \"verify_account\"}`: 必ずこの特定ツールを呼び出す。必須の最初のステップを強制する場合",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A2-3",
+    "question": "GrepとGlobを使い分ける基準を説明せよ。",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "- Grep: ファイルの内容を検索。関数呼び出し元、エラーメッセージ、import文の検索に使う\n- Glob: ファイルのパスをパターンマッチング。拡張子でのファイル検索（`**/*.test.tsx`）に使う\n\n試験は意図的に間違いを選ぶと時間を無駄にしたり失敗するシナリオを提示する。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A3-1",
+    "question": "Developer AのClaude CodeはチームのAPI命名規則に完璧に従う。先週入社したDeveloper Bは一貫性のない命名を得る。同じリポジトリで作業している。根本原因は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "指示がユーザーレベルの設定（`~/.claude/CLAUDE.md`）にある。  \nバージョン管理外でチームと共有されない。チーム標準は必ずプロジェクトレベル（`.claude/CLAUDE.md`）に置く。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A3-2",
+    "question": "50以上のディレクトリに分散したテストファイルに同じテスト規則を適用したい。最も効率的な方法は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "50個のディレクトリそれぞれにCLAUDE.mdを作成"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "multiSelect": false,
+    "explanation": "C) `.claude/rules/`にglobパターン付きのファイルを作成  \n- ディレクトリレベルのCLAUDE.mdはそのディレクトリのみに適用（A: 手間がかかりすぎ）\n- ルートのCLAUDE.md: 常時ロードされて不必要なトークンを消費（B: 非効率）\n- スキル: オンデマンドで適切だが、規則が常時適用されるべき場合はglobルールが適切（D: 使い分けが違う）\n- Cのglobパターンは必要なときだけロード + コードベース全体に適用"
+  },
+  {
+    "id": "claude-arc-A3-3",
+    "question": "CIパイプラインスクリプトで`claude \"このPRを分析してください\"`が無限にハングする。原因と修正は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "原因: `-p`フラグがないため、Claude Codeが対話入力を待ってハングしている。\n\n修正: `-p`フラグを追加して非対話型（プリントモード）で実行:\n```\nclaude -p \"このPRを分析してください\"\n```",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A4-1",
+    "question": "コードレビューエージェントの偽陽性率が高く、開発者がすべての警告を無視し始めた。最も効果的な修正は？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "「もっと保守的にしてください」とプロンプトに追加"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "multiSelect": false,
+    "explanation": "C) 明確な分類基準をコード例付きで定義\n\nA・Bは「vague confidence-based instructions」で機能しないと明示されている。Dは効果はあるが根本的には「何をレポートするか」の基準が曖昧なままでは改善に限界がある。Cが最も直接的な根本解決。"
+  },
+  {
+    "id": "claude-arc-A4-2",
+    "question": "請求書から構造化データを抽出するシステムで、支払い期限フィールドが空のケースがある。実際には請求書に記載されていることもあれば、本当に記載されていないこともある。スキーマをどう設計すべきか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "`payment_due_date`フィールドをnullable（オプション）にする。\n\n必須フィールドだと、情報がない場合にモデルが値を作り上げる（ハルシネーション）。Nullable設計は「情報がソースにない場合は空にする」ことを明示的に許容し、ハルシネーションを防ぐ。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A4-3",
+    "question": "マネージャーが「コスト削減のためにすべてのAPI呼び出しをBatch APIに移行する」と提案した。この提案の何が問題か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "Batch APIはレイテンシSLAがなく、最大24時間かかる場合がある。\n\nブロッキングワークフロー（マージ前チェック、開発者がリアルタイムで待つもの）には同期APIが必須。Batch APIは夜間レポートや週次監査などのレイテンシ許容ワークフローのみに適している。コスト削減の発想は正しいが、全てのケースに適用するのは誤り。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A5-1",
+    "question": "長期的なサポートセッションで、エージェントが最初に確認した注文番号「#8891の$247.83の返金」を後のターンで「最近の注文の返金」と言及している。何が起きているか、どう修正するか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "プログレッシブ要約が取引上の事実を圧縮している。\n\n修正: 取引上の事実（金額、日付、注文番号、顧客ID）を永続的な「ケース事実」ブロックに抽出し、毎回のプロンプトに含める。このブロックは絶対に要約しない。",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A5-2",
+    "question": "カスタマーサポートエージェントに「顧客がイライラしているときは人間にエスカレーション」というルールを追加した。問題は何か？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "感情ベースのエスカレーションは信頼できないトリガー。  \nイライラは案件の複雑さと相関しない。単純な問題でもイライラした顧客がいれば毎回エスカレーション、複雑な問題でも冷静な顧客はエスカレーションされない。\n\n有効なエスカレーショントリガー:\n1. 顧客が明示的に人間を要求\n2. ポリシーのギャップや例外\n3. 意味ある進展が不可能",
+    "type": "knowledge-check"
+  },
+  {
+    "id": "claude-arc-A5-3",
+    "question": "2つの信頼できるソースが異なる統計を報告している（ソースAは35%、ソースBは42%）。合成エージェントはどう対処すべきか？",
+    "choices": [
+      {
+        "label": "A",
+        "text": "答えを確認する（下の解説を読む）"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "multiSelect": false,
+    "explanation": "どちらか1つを選ばない。両方の値とソース帰属で注釈を付ける。\n\n「ソースA（2025年調査）では35%、ソースB（2026年レポート）では42%と報告されており、測定時期または方法論の違いによる可能性がある」のように記録する。消費者（人間または後続システム）が判断する。ただし恣意的に選択することはしない。",
+    "type": "knowledge-check"
+  }
+]
