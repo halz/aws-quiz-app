@@ -54,7 +54,7 @@ const CHOICE_COLORS: Record<string, { bg: string; text: string; border: string }
 };
 
 const SECTIONS = [
-  { id: 'courses', label: '📚 コース学習', desc: 'Anthropic Academy 全13コースのカリキュラム', icon: '📚' },
+  { id: 'courses', label: '📚 コース学習', desc: 'Anthropic Academy 全16コースのカリキュラム', icon: '📚' },
   { id: 'architect', label: '🏛️ Architect試験対策', desc: 'Claude Certified Architect ガイド（5ドメイン）', icon: '🏛️' },
   { id: 'quiz', label: '✍️ 問題集', desc: 'コース理解確認問題 + Architect試験問題', icon: '✍️' },
 ];
@@ -236,7 +236,7 @@ export default function ClaudePage() {
             <h3 className="text-xl font-bold text-white mb-4">📋 コンテンツ概要</h3>
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="bg-slate-700/50 rounded-lg p-4">
-                <div className="text-3xl font-bold text-orange-400">13</div>
+                <div className="text-3xl font-bold text-orange-400">16</div>
                 <div className="text-gray-400 text-sm">Academyコース</div>
               </div>
               <div className="bg-slate-700/50 rounded-lg p-4">
